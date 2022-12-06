@@ -1,0 +1,40 @@
+.main-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .company-main-box {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 0 20px #ccc;
+    min-width: 400px;
+    margin-top: 50px;
+  }
+  
+  .form-item {
+    width: 100%;
+  }
+  
+  .city-country-box {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .email-phone-box {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .email-phone-box-item {
+    flex-grow: 1;
+  }
+  
+  .back-save-box {
+    display: flex;
+    gap: 20px;
+    align-self: center;
+  }
+  

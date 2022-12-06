@@ -1,33 +1,36 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Company } from '../model/company';
-import { Observable } from 'rxjs'; 
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class CompanyService {
-    constructor(private httpClient: HttpClient) { }
-    
-    get(id: number): Observable<Company>{
-        const url = '/api/company' + id;
-        return this.httpClient.get<Company>(url);
-    }
+  constructor(private httpClient: HttpClient) {}
 
-    getAll(): Observable<Company[]>{
-        return this.httpClient.get<Company[]>('/api/company/all');
-    }
+  get(id: number): Observable<Company> {
+    const url = '/api/company/' + id;
+    return this.httpClient.get<Company>(url);
+  }
 
-    create(company: Company): Observable<Company>{
-        const url = '/api/company';
-        return this.httpClient.post<Company>(url, company);
-    }
+  getAll(): Observable<Company[]> {
+    return this.httpClient.get<Company[]>('/api/company/all', {
+      headers: new HttpHeaders({ 'Test-Header': '2.10' }),
+    });
+  }
 
-    update(company: Company): Observable<Company>{
-        const url = '/api/company';
-        return this.httpClient.put<Company>(url, company);
-    }
+  create(company: Company): Observable<Company> {
+    const url = '/api/company';
+    return this.httpClient.post<Company>(url, company);
+  }
 
-    delete(id: number): Observable<Company>{
-        const url = '/api/company/' + id;
-        return this.httpClient.delete<Company>(url);
-    }
+  update(company: Company): Observable<Company> {
+    const url = '/api/company';
+    return this.httpClient.put<Company>(url, company);
+  }
+
+  delete(id: number): Observable<Company> {
+    const url = '/api/company/' + id;
+    return this.httpClient.delete<Company>(url);
+  }
 }
+ 

@@ -1,30 +1,33 @@
 <div class="main-container">
-    <h3>Company</h3>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <h3>Company</h3>
+  <button mat-raised-button color="primary" class="add-company-button" routerLink='/company/create'>
+    Add Company
+  </button>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> ID </th>
-        <td mat-cell *matCellDef="let element">{{element.id}}</td>
-      </ng-container>
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
 
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
       <td mat-cell *matCellDef="let element"> {{element.name}} </td>
     </ng-container>
-   
+
     <ng-container matColumnDef="address">
       <th mat-header-cell *matHeaderCellDef> Address </th>
       <td mat-cell *matCellDef="let element"> {{element.address}} </td>
     </ng-container>
 
     <ng-container matColumnDef="city">
-        <th mat-header-cell *matHeaderCellDef> City </th>
-        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+      <th mat-header-cell *matHeaderCellDef> City </th>
+      <td mat-cell *matCellDef="let element"> {{element.city}} </td>
     </ng-container>
 
     <ng-container matColumnDef="country">
-        <th mat-header-cell *matHeaderCellDef> Country </th>
-        <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+      <th mat-header-cell *matHeaderCellDef> Country </th>
+      <td mat-cell *matCellDef="let element"> {{element.country}} </td>
     </ng-container>
 
     <ng-container matColumnDef="email">
@@ -33,30 +36,28 @@
     </ng-container>
 
     <ng-container matColumnDef="phone">
-        <th mat-header-cell *matHeaderCellDef> Phone </th>
-        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
-      </ng-container>
+      <th mat-header-cell *matHeaderCellDef> Phone </th>
+      <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+    </ng-container>
 
-      <ng-container matColumnDef="registrationNumber">
-        <th mat-header-cell *matHeaderCellDef> Registration Number </th>
-        <td mat-cell *matCellDef="let element"> {{element.registrationNumber}} </td>
-      </ng-container>
+    <ng-container matColumnDef="registrationNumber">
+      <th mat-header-cell *matHeaderCellDef> Registration Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.registrationNumber}} </td>
+    </ng-container>
 
-      <ng-container matColumnDef="vatNumber">
-        <th mat-header-cell *matHeaderCellDef> VAT Number </th>
-        <td mat-cell *matCellDef="let element"> {{element.vatNumber}} </td>
-      </ng-container>
+    <ng-container matColumnDef="vatNumber">
+      <th mat-header-cell *matHeaderCellDef> VAT Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.vatNumber}} </td>
+    </ng-container>
 
-      <ng-container matColumnDef="administratorList">
-        <th mat-header-cell *matHeaderCellDef> Administrator List </th>
-        <td mat-cell *matCellDef="let element"> {{element.administratorList}} </td>
-      </ng-container>
+    <ng-container matColumnDef="remove">
+      <th mat-header-cell *matHeaderCellDef>Remove</th>
+      <td mat-cell *matCellDef="let element">
+        <span class="material-icons" (click)="openDialog(element)">delete_forever</span>
+      </td>
+    </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </div>
-
-
-    
-

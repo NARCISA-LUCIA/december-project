@@ -1,0 +1,33 @@
+.form-box {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  box-shadow: 10px 10px 10px 10px grey;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 50px;
+}
+
+.box-name-address,
+.box-city-country,
+.box-email-phone,
+.box-registration-vat {
+  display: flex;
+  gap: 10px;
+}
+
+.form-width,
+.admin {
+  width: 100%;
+}
+
+.button-create {
+  display: flex;
+  gap: 10px;
+}

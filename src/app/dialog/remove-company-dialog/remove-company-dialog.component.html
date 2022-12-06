@@ -1,0 +1,5 @@
+<p>Are you sure you want to remove <span>{{data.name}}</span> ?</p>
+<div mat-dialog-actions>
+<button mat-raised-button color="primary" (click)="onClose()">No</button>
+<button mat-raised-button color="warn" [mat-dialog-close]="data">Yes</button>
+</div>

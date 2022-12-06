@@ -1,0 +1,9 @@
+.header-box {
+  position: fixed;
+  top:0;
+}
+
+.title {
+width: 100%;
+text-align: center;
+}
