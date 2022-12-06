@@ -1,0 +1,23 @@
+<div class="box">
+    <div class="form-box">
+        <h3>Add New Project</h3>
+        <div class="form" [formGroup]="formControlGroup">
+            <mat-form-field class="form-width" appearance="legacy">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="" formControlName="name">
+                <mat-icon matSuffix>event_available</mat-icon>
+            </mat-form-field>
+        </div>
+        <div class="form" [formGroup]="formControlGroup">
+            <mat-form-field class="form-width" appearance="legacy">
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="" formControlName="description">
+                <mat-icon matSuffix>event_available</mat-icon>
+            </mat-form-field>
+        </div>
+        <div class="button-create">
+            <button mat-raised-button color="accent" (click)="createProject()">Submit New Project</button>
+            <button mat-raised-button color="primary" (click)="goBack()">Back</button>
+        </div>
+    </div>
+</div>

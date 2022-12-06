@@ -27,9 +27,17 @@ import { RemoveCompanyDialogComponent } from './dialog/remove-company-dialog/rem
 import { ToastrModule } from 'ngx-toastr';
 import { CompanyUpdateComponent } from './company/company-update/company-update.component';
 import { InterceptorService } from './interceptor-service';
+import { ProjectPageComponent } from './project/project-page/project-page.component';
+import { ProjectService } from './service/project-service';
+import { RemoveProjectDialogComponent } from './dialog/remove-project-dialog/remove-project-dialog.component';
+import { LocalStorageService,LOCAL_STORAGE_SERVICE } from './service/localstorage-service';
+import { LOCAL_STORAGE } from 'ngx-webstorage-service';
+import { ProjectCreateComponent } from './project/project-create/project-create.component';
+import { ProjectUpdateComponent } from './project/project-update/project-update.component';
+
 
 @NgModule({
-  declarations: [AppComponent, CompaniesPageComponent, CompanyCreateComponent, HeaderComponent, FooterComponent,RemoveCompanyDialogComponent, CompanyUpdateComponent],
+  declarations: [AppComponent, CompaniesPageComponent, CompanyCreateComponent, HeaderComponent, FooterComponent,RemoveCompanyDialogComponent, CompanyUpdateComponent, ProjectPageComponent, RemoveProjectDialogComponent, ProjectCreateComponent, ProjectUpdateComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -50,7 +58,7 @@ import { InterceptorService } from './interceptor-service';
     MatGridListModule,
     ToastrModule.forRoot()
   ],
-  providers: [HttpClient, CompanyService, {
+  providers: [HttpClient, CompanyService, ProjectService,  LocalStorageService, {provide: LOCAL_STORAGE_SERVICE, useExisting:LOCAL_STORAGE}, {
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorService,
     multi:true

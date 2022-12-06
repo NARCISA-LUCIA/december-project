@@ -3,11 +3,17 @@ import { CompaniesPageComponent } from './company/companies-page/companies-page.
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CompanyUpdateComponent } from './company/company-update/company-update.component';
+import { ProjectPageComponent } from './project/project-page/project-page.component';
+import { ProjectCreateComponent } from './project/project-create/project-create.component';
+import { ProjectUpdateComponent } from './project/project-update/project-update.component';
 
 const routes: Routes = [
   { path: 'companies', component: CompaniesPageComponent },
   { path: 'company/create', component: CompanyCreateComponent },
-  {path:'company/:id/update', component:CompanyUpdateComponent}
+  { path: 'company/:id/update', component: CompanyUpdateComponent },
+  { path: 'projects', component: ProjectPageComponent },
+  { path: 'project/create', component: ProjectCreateComponent },
+  { path: 'project/:id/update', component: ProjectUpdateComponent },
 ];
 
 @NgModule({
