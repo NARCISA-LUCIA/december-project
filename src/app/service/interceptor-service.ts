@@ -6,9 +6,11 @@ import {
 
 export class InterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    //   if (req.url === '/api/company')
-    console.log('Request is on its way');
-    // console.log(req.url);
+    if (req.url.includes('/api/company')) {
+      console.log('Company request is on its way' + req.url); 
+    } else {
+      console.log('The other request is on its way' + req.url); 
+      }
     return next.handle(req);
   }
 }

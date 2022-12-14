@@ -26,7 +26,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { RemoveCompanyDialogComponent } from './dialog/remove-company-dialog/remove-company-dialog.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CompanyUpdateComponent } from './company/company-update/company-update.component';
-import { InterceptorService } from './interceptor-service';
+import { InterceptorService } from './service/interceptor-service';
 import { ProjectPageComponent } from './project/project-page/project-page.component';
 import { ProjectService } from './service/project-service';
 import { RemoveProjectDialogComponent } from './dialog/remove-project-dialog/remove-project-dialog.component';
@@ -34,10 +34,15 @@ import { LocalStorageService,LOCAL_STORAGE_SERVICE } from './service/localstorag
 import { LOCAL_STORAGE } from 'ngx-webstorage-service';
 import { ProjectCreateComponent } from './project/project-create/project-create.component';
 import { ProjectUpdateComponent } from './project/project-update/project-update.component';
+import { UsersPageComponent } from './user/users-page/users-page.component';
+import { UserService } from './service/user-service';
+import { UserCreateComponent } from './user/user-create/user-create.component';
+import { RemoveUserDialogComponent } from './dialog/remove-user-dialog/remove-user-dialog.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 
 @NgModule({
-  declarations: [AppComponent, CompaniesPageComponent, CompanyCreateComponent, HeaderComponent, FooterComponent,RemoveCompanyDialogComponent, CompanyUpdateComponent, ProjectPageComponent, RemoveProjectDialogComponent, ProjectCreateComponent, ProjectUpdateComponent],
+  declarations: [AppComponent, CompaniesPageComponent, CompanyCreateComponent, HeaderComponent, FooterComponent,RemoveCompanyDialogComponent, CompanyUpdateComponent, ProjectPageComponent, RemoveProjectDialogComponent, ProjectCreateComponent, ProjectUpdateComponent, UsersPageComponent, UserCreateComponent, RemoveUserDialogComponent, UserUpdateComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -58,7 +63,7 @@ import { ProjectUpdateComponent } from './project/project-update/project-update.
     MatGridListModule,
     ToastrModule.forRoot()
   ],
-  providers: [HttpClient, CompanyService, ProjectService,  LocalStorageService, {provide: LOCAL_STORAGE_SERVICE, useExisting:LOCAL_STORAGE}, {
+  providers: [HttpClient, CompanyService, ProjectService,  LocalStorageService, UserService, {provide: LOCAL_STORAGE_SERVICE, useExisting:LOCAL_STORAGE}, {
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorService,
     multi:true

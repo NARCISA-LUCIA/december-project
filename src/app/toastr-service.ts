@@ -4,10 +4,10 @@ import { CompaniesPageComponent } from './company/companies-page/companies-page.
 export class toastrService {
   constructor(private toastrService: ToastrService) {}
 
-  showSuccess(companyName: string) {
+  showSuccess(entityName: string) {
     this.toastrService.success(
-      'Company `' + companyName + '` was deleted',
-      'Company delete'
+       entityName + '` was deleted',
+       'Delete'
     );
   }
 

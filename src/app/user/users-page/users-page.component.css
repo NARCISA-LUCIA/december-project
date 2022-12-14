@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.add-user-button {
+  margin-bottom: 5px;
+}
+
+.cursor-pointer:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.users-box {
+  width: 70%;
+}
+
+.main-box {
+  margin-top: 80px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}

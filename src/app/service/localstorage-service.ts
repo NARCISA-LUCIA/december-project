@@ -35,4 +35,8 @@ export class LocalStorageService {
   remove(key: string) {
     this.storage.remove(key);
   }
+
+  removeProjectId() {
+    this.remove('ProjectId');
+  }
 }
