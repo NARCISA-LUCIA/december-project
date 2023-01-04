@@ -1,3 +1,4 @@
+import { FeaturePageComponent } from './feature/feature-page/feature-page.component';
 import { CompanyCreateComponent } from './company/company-create/company-create.component';
 import { CompaniesPageComponent } from './company/companies-page/companies-page.component';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,8 @@ import { ProjectUpdateComponent } from './project/project-update/project-update.
 import { UsersPageComponent } from './user/users-page/users-page.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { FeatureCreateComponent } from './feature/feature-create/feature-create.component';
+import { FeatureUpdateComponent } from './feature/feature-update/feature-update.component';
 
 const routes: Routes = [
   { path: 'companies', component: CompaniesPageComponent },
@@ -19,7 +22,10 @@ const routes: Routes = [
   { path: 'project/:id/update', component: ProjectUpdateComponent },
   { path: 'users', component: UsersPageComponent },
   { path: 'user/create', component: UserCreateComponent },
-  {path:'user/:id/update', component:UserUpdateComponent}
+  { path: 'user/:id/update', component: UserUpdateComponent },
+  { path: 'features', component: FeaturePageComponent },
+  { path: 'feature/create', component: FeatureCreateComponent },
+  { path: 'feature/:id/update', component: FeatureUpdateComponent },
 ];
 
 @NgModule({

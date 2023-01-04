@@ -15,14 +15,14 @@ import { CompanyCreateComponent } from './company/company-create/company-create.
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { FooterComponent } from './footer/footer.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { RemoveCompanyDialogComponent } from './dialog/remove-company-dialog/remove-company-dialog.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CompanyUpdateComponent } from './company/company-update/company-update.component';
@@ -30,7 +30,10 @@ import { InterceptorService } from './service/interceptor-service';
 import { ProjectPageComponent } from './project/project-page/project-page.component';
 import { ProjectService } from './service/project-service';
 import { RemoveProjectDialogComponent } from './dialog/remove-project-dialog/remove-project-dialog.component';
-import { LocalStorageService,LOCAL_STORAGE_SERVICE } from './service/localstorage-service';
+import {
+  LocalStorageService,
+  LOCAL_STORAGE_SERVICE,
+} from './service/localstorage-service';
 import { LOCAL_STORAGE } from 'ngx-webstorage-service';
 import { ProjectCreateComponent } from './project/project-create/project-create.component';
 import { ProjectUpdateComponent } from './project/project-update/project-update.component';
@@ -39,10 +42,34 @@ import { UserService } from './service/user-service';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { RemoveUserDialogComponent } from './dialog/remove-user-dialog/remove-user-dialog.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
-
+import { FeatureService } from './service/feature-service';
+import { FeaturePageComponent } from './feature/feature-page/feature-page.component';
+import { RemoveFeatureDialogComponent } from './dialog/remove-feature-dialog/remove-feature-dialog/remove-feature-dialog.component';
+import { FeatureCreateComponent } from './feature/feature-create/feature-create.component';
+import { FeatureUpdateComponent } from './feature/feature-update/feature-update.component';
 
 @NgModule({
-  declarations: [AppComponent, CompaniesPageComponent, CompanyCreateComponent, HeaderComponent, FooterComponent,RemoveCompanyDialogComponent, CompanyUpdateComponent, ProjectPageComponent, RemoveProjectDialogComponent, ProjectCreateComponent, ProjectUpdateComponent, UsersPageComponent, UserCreateComponent, RemoveUserDialogComponent, UserUpdateComponent],
+  declarations: [
+    AppComponent,
+    CompaniesPageComponent,
+    CompanyCreateComponent,
+    HeaderComponent,
+    FooterComponent,
+    RemoveCompanyDialogComponent,
+    CompanyUpdateComponent,
+    ProjectPageComponent,
+    RemoveProjectDialogComponent,
+    ProjectCreateComponent,
+    ProjectUpdateComponent,
+    UsersPageComponent,
+    UserCreateComponent,
+    RemoveUserDialogComponent,
+    UserUpdateComponent,
+    FeaturePageComponent,
+    RemoveFeatureDialogComponent,
+    FeatureCreateComponent,
+    FeatureUpdateComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -61,13 +88,22 @@ import { UserUpdateComponent } from './user-update/user-update.component';
     MatSidenavModule,
     MatListModule,
     MatGridListModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
-  providers: [HttpClient, CompanyService, ProjectService,  LocalStorageService, UserService, {provide: LOCAL_STORAGE_SERVICE, useExisting:LOCAL_STORAGE}, {
-    provide: HTTP_INTERCEPTORS,
-    useClass: InterceptorService,
-    multi:true
-  }],
+  providers: [
+    HttpClient,
+    CompanyService,
+    ProjectService,
+    LocalStorageService,
+    UserService,
+    FeatureService,
+    { provide: LOCAL_STORAGE_SERVICE, useExisting: LOCAL_STORAGE },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

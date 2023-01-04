@@ -6,19 +6,19 @@
   
         <ng-container matColumnDef="firstName">
           <th mat-header-cell *matHeaderCellDef> First Name</th>
-          <td mat-cell *matCellDef="let element" routerLink='/user/{{element.id}}/update'
+          <td mat-cell *matCellDef="let element" routerLink='/user/{{element.firstName}}/update'
               class="item-hover"> {{element.firstName}} </td>
         </ng-container>
   
         <ng-container matColumnDef="lastName">
           <th mat-header-cell *matHeaderCellDef> Last Name</th>
-          <td mat-cell *matCellDef="let element" routerLink='/user/{{element.id}}/update'
+          <td mat-cell *matCellDef="let element" routerLink='/user/{{element.lastName}}/update'
               class="item-hover"> {{element.lastName}} </td>
         </ng-container>
   
         <ng-container matColumnDef="email">
           <th mat-header-cell *matHeaderCellDef> Email</th>
-          <td mat-cell *matCellDef="let element" routerLink='/user/{{element.id}}/update'
+          <td mat-cell *matCellDef="let element" routerLink='/user/{{element.email}}/update'
               class="item-hover"> {{element.lastName}} </td>
         </ng-container>
   
