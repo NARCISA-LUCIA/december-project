@@ -47,6 +47,9 @@ import { FeaturePageComponent } from './feature/feature-page/feature-page.compon
 import { RemoveFeatureDialogComponent } from './dialog/remove-feature-dialog/remove-feature-dialog/remove-feature-dialog.component';
 import { FeatureCreateComponent } from './feature/feature-create/feature-create.component';
 import { FeatureUpdateComponent } from './feature/feature-update/feature-update.component';
+import {MatCardModule} from '@angular/material/card';
+import { FeatureCardComponent } from './feature/feature-card/feature-card.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +72,8 @@ import { FeatureUpdateComponent } from './feature/feature-update/feature-update.
     RemoveFeatureDialogComponent,
     FeatureCreateComponent,
     FeatureUpdateComponent,
+    FeatureCardComponent,
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,6 +94,7 @@ import { FeatureUpdateComponent } from './feature/feature-update/feature-update.
     MatListModule,
     MatGridListModule,
     ToastrModule.forRoot(),
+    MatCardModule,
   ],
   providers: [
     HttpClient,

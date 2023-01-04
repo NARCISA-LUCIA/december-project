@@ -1,0 +1,14 @@
+
+  
+  .container-card {
+    width: fit-content;
+    margin: 10px;
+    background-color: olivedrab;
+  }
+  
+  .text-card {
+    background-color: white;
+    width: 250px;
+    height: 150px;
+  }
+  
